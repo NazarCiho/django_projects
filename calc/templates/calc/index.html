@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+
+            padding: 50px;
+        }
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 20px 0;
+            padding-top:25px;
+
+        }
+        a {
+
+            text-decoration: none;
+            color: #fff;
+
+            background-color: #39b317;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+            animation: colorChange 5s infinite;
+            }
+        @keyframes colorChange {
+          0% {
+            color: red;
+          }
+          25% {
+            color: yellow;
+          }
+          50% {
+            color: lime;
+          }
+          75% {
+            color: blue;
+          }
+          100% {
+            color: red;
+          }
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+        .head{
+            background-color: #0056b3;
+            width:110%;
+            margin-left:-60px;
+            height:33px;
+        }
+        .examples{
+            background-color: red;
+            margin-left:10px;
+            transition: background-color 0.3s ease;
+            animation: colorChange2 5s infinite;
+        }
+        @keyframes colorChange2 {
+          0% {
+            color: green;
+          }
+          25% {
+            color: yellow;
+          }
+          50% {
+            color: lime;
+          }
+          75% {
+            color: blue;
+          }
+          100% {
+            color: black;
+          }
+        }
+    </style>
+</head>
+<body>
+    {% if diya_name and a and b is not None %}
+        <h1>Результатом {{ diya_name }} {{ a }} і {{ b }} є {{ result }}.</h1>
+    {% else %}
+        <h1>Привіт!</h1>
+    {% endif %}
+    <a class="examples" href="http://localhost:8000/calc/4/0/d/" >Приклад 1</a>
+    <a class="examples" href="http://localhost:8000/calc/1/2/+/" >Приклад 2 </a>
+    <a class="examples" href="http://localhost:8000/calc/query/?a=2&b=4" >Приклад 3 </a>
+</body>
+</html>
